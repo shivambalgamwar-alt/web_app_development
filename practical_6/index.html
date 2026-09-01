@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Calculator</title>
+</head>
+<body >
+
+    <h1>Student Grade Calculator</h1>
+    
+    
+    <h3>
+        <table border="5">
+            <tr>
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>maths</td>
+                <td><input type="text" id="m" name="maths" placeholder="enter marks"></td>
+            </tr>
+            <tr>
+                <td>ed</td>
+                <td><input type="text" id="ed" name="ed" placeholder="enter marks"></td>
+            </tr>
+            <tr>
+                <td>dsa</td>
+                <td><input type="text" id="dsa" name="dsa" placeholder="enter marks"></td>
+            </tr>
+            <tr>
+                <td>EE</td>
+                <td><input type="text" id="ee" name="ee" placeholder="enter marks"></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="calculateGrades()">
+                        Calculate Grades
+                    </button>
+                </td>
+            </tr>
+        </table>    
+    </h3>
+
+    <h1>
+        Percentage: <span id="per"></span>
+    </h1>
+    <hr>
+    <h1>
+        Total Marks: <span id="totalMarks"></span>
+    </h1>
+    <hr>
+    <h1>
+        Grade: <span id="grade"></span>
+    </h1>
+    <script>
+        function calculateGrades() {
+            let sub1 = Number(document.getElementById("m").value);
+            let sub2 = Number(document.getElementById("ed").value);
+            let sub3 = Number(document.getElementById("dsa").value);
+            let sub4 = Number(document.getElementById("ee").value);
+            // alert(sub1);
+
+            let grade = null;
+            let total = sub1 + sub2 + sub3 + sub4;
+
+            // alert(total);
+
+            let percentage = (total / 400) * 100;
+
+
+            if(percentage >=90){
+                grade = "A";
+            } else if(percentage >=80&&percentage <90){
+                grade = "B";
+            } else if(percentage >=70&&percentage <80){
+                grade = "C";
+            } else {
+                grade = "D";
+            }
+
+            // alert(percentage);
+            document.getElementById("per").textContent = percentage.toFixed(2) + "%";
+            document.getElementById("totalMarks").textContent = total;
+            document.getElementById("grade").textContent = grade;
+        }
+    </script>
+</body>
+</html>
