@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-r from-gray-900 to-emerald-900 flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-96">
+
+        <h2 class="text-2xl font-bold text-center text-green-600 mb-6">
+            Student Help Portal
+        </h2>
+
+        <p class="text-center mb-5 text-gray-600">
+            <b>Online Learning Website</b>
+        </p>
+
+        <!-- FAQ 1 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-gray-900 to-emerald-900 text-white rounded">
+                Are the courses available for beginners?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                Yes. We offer courses for beginners as well as intermediate and advanced leraners. Each course includes its required skill level.
+            </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-gray-900 to-emerald-900 text-white rounded">
+                How do i enroll in course?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                choose the course you want and click the <b>Enroll Now</b> button. Follow the instructions to complete your enrollment. 
+            </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-gray-900 to-emerald-900  text-white rounded">
+                Do i get the certificate?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+               Yes! you will get the certificate after completing the course.
+            </p>
+        </div>
+
+        <div class="mb-4">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-gray-900 to-emerald-900  text-white rounded">
+                Do you provide live sessions or recorded lectures ?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+               Yes! we do conduct live lectures and you will even get the recorded lec after the clases.
+            </p>
+        </div>
+
+        <div class="mb-5">
+            <button class="question w-full text-left p-3 bg-gradient-to-r from-gray-900 to-emerald-900  text-white rounded">
+                Do i have to pay whole amount in single time?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+               Yes! you will have to pay the whole amount in single time.
+            </p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Get all questions
+        let questions = document.querySelectorAll(".question");
+
+        // Add click event to each question
+        questions.forEach(function(question) {
+
+            question.addEventListener("click", function() {
+
+                // Get the answer
+                let answer = question.nextElementSibling;
+
+                // Show / Hide answer
+                answer.classList.toggle("hidden");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
